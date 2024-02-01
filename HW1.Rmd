@@ -1,0 +1,37 @@
+#Catherine Rivas
+setwd("/Users/cat/Desktop/RWork/V0500_Lecture1”")
+ load("BRFSS2022_rev.RData")
+  brfss22[1:10,1:6]
+  attach(brfss22)
+  #summary of the people sleep in NY
+  summary(SLEPTIM1[X_STATE == "New York"])
+   #summary of ppl that sleep in Ohio
+   summary(SLEPTIM1[X_STATE == "Ohio"])
+   #mean of the people that sleep in NY
+  mean(SLEPTIM1[X_STATE == "New York"], na.rm = TRUE)
+  #SD of people that sleep in NY
+  sd(SLEPTIM1[X_STATE == "New York"], na.rm = TRUE)
+  #mean of people that sleep in Ohio 
+  mean(SLEPTIM1[X_STATE == "Ohio"], na.rm = TRUE)
+  #sd of people that sleep in Ohio
+  sd(SLEPTIM1[X_STATE == "Ohio"], na.rm = TRUE)
+  #histogram of sleep 
+  hist(SLEPTIM1[(SLEPTIM1 >5) & (SLEPTIM1 < 9)])
+  #summary of the sex variable
+   summary(SEXVAR)
+   #summary of birth sex
+   summary(BIRTHSEX)
+   #summary of general health
+   summary(GENHLTH)
+   #summary of education
+   summary(EDUCA)
+   #trying variable as factor, looking at summary
+   summary(X_AGEG5YR)
+   #summary of income
+   summary(INCOME3)
+   #table for the gen health and sex variable
+   table(GENHLTH, SEXVAR)
+   xtabs (~GENHLTH +SEXVAR)
+   #proportion of genhlth and sex variable
+   prop.table(table(GENHLTH, SEXVAR))
+   
